@@ -31,5 +31,17 @@ public class ComunaController {
         return new ResponseEntity<>(comuna, HttpStatus.OK);
     }
 
+    @DeleteMapping("/comuna/{id}")
+    @ResponseBody
+    public String eliminarComuna(@PathVariable Long id) {
+        Comuna comuna = comunaService.verComuna(id);
+        if (comuna != null) {
+            comunaService.eliminarComuna(comuna);
+            return "Comuna eliminada";
+        } else {
+            return "No existe la comuna con id " + id;
+        }
+    }
+
 
 }
