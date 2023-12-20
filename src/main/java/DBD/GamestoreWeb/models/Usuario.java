@@ -17,33 +17,33 @@ public class Usuario {
     @Column(unique = true, nullable = false)
     private Long usuarioid;
 
-    //@Column(name = "carrito_id_fk")
+    @Column(name = "carrito_id_fk")
     private Long carritoIdFk;
 
-    //@Column(name = "Nombre", length = 50)
+    @Column(name = "Nombre", length = 50)
     private String nombre;
 
-    //@Column(name = "pass_id_fk")
+    @Column(name = "pass_id_fk")
     private Long passIdFk;
 
-    //@Column(name = "roll_id_fk")
+    @Column(name = "roll_id_fk")
     private Long rollIdFk;
 
-   // @Column(name = "Email", length = 50)
+   @Column(name = "Email", length = 50)
     private String email;
 
-    //@Column(name = "nombreCalle", length = 50)
+    @Column(name = "nombrecalle", length = 50)
     private String nombreCalle;
 
-    //Column(name = "numerocasa")
+    @Column (name = "numerocasa")
     private Integer numerocasa;
 
-    //@Column(name = "nomuna_id_fk")
+    @Column(name = "comuna_id_fk")
     private Long comunaIdFk;
 
-    //@Column(name = "Fecharegistro", length = 50)
+    @Column(name = "Fecharegistro", length = 50)
     private String fecharegistro;
 
-    //@Column(name = "Fechanacimiento", length = 50)
+    @Column(name = "Fechanacimiento", length = 50)
     private String fechanacimiento;
 }
