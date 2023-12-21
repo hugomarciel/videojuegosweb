@@ -19,13 +19,11 @@ public class Usuario {
     @Column(unique = true, nullable = false)
     private Long usuarioid;
 
-    @OneToMany(mappedBy = "usuario")
-    private Set<Carrito_compras> carritoCompras;
 
     @Column(name = "Nombre", length = 50)
     private String nombre;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "pass_id_fk")
     private Contrasena passIdfk;
 
