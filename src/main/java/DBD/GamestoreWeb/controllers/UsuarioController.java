@@ -24,7 +24,7 @@ public class UsuarioController {
     public ResponseEntity<List<Usuario>> verUsuarios() { return ResponseEntity.ok(usuarioService.verUsuarios());
     }
 
-    @PutMapping("/usuario/")
+    @PutMapping("/usuario/actualizar")
     public ResponseEntity<Usuario> editar(@RequestBody Usuario usuarioEntity) {
         Usuario usuario = usuarioService.editarUsuario(usuarioEntity);
         return new ResponseEntity<>(usuario, HttpStatus.OK);

@@ -17,9 +17,11 @@ public class Usersigueuser {
     @Column(name = "Usersigueuserid", unique = true, nullable = false)
     private Long usersigueuserId;
 
-    @Column(name = "User_id_fk")
-    private Long userIdFk;
+    @ManyToOne
+    @JoinColumn(name = "User_id_fk")
+    private Usuario userIdFk;
 
-    @Column(name = "Userf_id_fk")
-    private Long userfIdFk;
+    @ManyToOne
+    @JoinColumn(name = "Userf_id_fk")
+    private Usuario userfIdFk;
 }

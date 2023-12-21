@@ -17,10 +17,12 @@ public class Usersiguedev {
     @Column(unique = true, nullable = false)
     private Long usersiguedevid;
 
-    @Column(name = "desarrollador_id_fk")
-    private Long desarrolladorIdFk;
+    @ManyToOne
+    @JoinColumn(name = "desarrollador_id_fk")
+    private Desarrollador desarrolladorIdFk;
 
-    @Column(name = "user_id_fk")
-    private Long userIdFk;
+    @ManyToOne
+    @JoinColumn(name = "user_id_fk")
+    private Usuario userIdFk;
 
 }

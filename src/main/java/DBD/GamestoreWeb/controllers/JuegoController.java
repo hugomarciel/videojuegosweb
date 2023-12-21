@@ -14,7 +14,7 @@ public class JuegoController {
     @Autowired
     JuegoService juegoService;
 
-    @PostMapping(value = "/juego/")
+    @PostMapping(value = "/juego/subir")
     public ResponseEntity<Juego> guardarJuego(@RequestBody Juego juegoEntityNuevo) {
         Juego objeto = juegoService.guardarJuego(juegoEntityNuevo);
         return new ResponseEntity<>(objeto, HttpStatus.OK);

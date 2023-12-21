@@ -17,11 +17,10 @@ public class Carrito_compras {
     @Column(name = "CarritoID", unique = true, nullable = false)
     private Long carritoId;
 
-    @Column(name = "Juego_id_fk")
-    private Long juegoIdFk;
 
-    @Column(name = "usuario_id_fk")
-    private Long usuarioIdFk;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id_fk")
+    private Usuario usuario;
 
     @Column(name = "Cantidad")
     private Integer cantidad;

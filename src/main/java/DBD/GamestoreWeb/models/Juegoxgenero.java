@@ -17,9 +17,11 @@ public class Juegoxgenero {
     @Column(name = "Juegoxgeneroid", unique = true, nullable = false)
     private Long juegoxgeneroid;
 
-    @Column(name = "Juego_ID_fk")
-    private Long juegoIdFk;
+    @ManyToOne
+    @JoinColumn(name = "Juego_ID_fk")
+    private Juego juegoIdFk;
 
-    @Column(name = "Genero_id_fk")
-    private Long generoIdFk;
+    @ManyToOne
+    @JoinColumn(name = "Genero_id_fk")
+    private Genero generoIdFk;
 }

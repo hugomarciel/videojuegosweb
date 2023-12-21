@@ -17,8 +17,9 @@ public class Boleta {
     @Column(name = "boletaid", unique = true, nullable = false)
     private Long boletaId;
 
-    @Column(name = "carrito_id_fk")
-    private Long carritoIdFk;
+    @ManyToOne
+    @JoinColumn(name = "carrito_id_fk")
+    private Carrito_compras carritoIdFk;
 
     @Column(name = "fechacompra")
     private String fechaCompra;

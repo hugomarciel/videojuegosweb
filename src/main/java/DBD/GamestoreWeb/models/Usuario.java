@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "usuario")
 @Data
@@ -17,17 +19,19 @@ public class Usuario {
     @Column(unique = true, nullable = false)
     private Long usuarioid;
 
-    @Column(name = "carrito_id_fk")
-    private Long carritoIdFk;
+    @OneToMany(mappedBy = "usuario")
+    private Set<Carrito_compras> carritoCompras;
 
     @Column(name = "Nombre", length = 50)
     private String nombre;
 
-    @Column(name = "pass_id_fk")
-    private Long passIdFk;
+    @ManyToOne
+    @JoinColumn(name = "pass_id_fk")
+    private Contrasena passIdfk;
 
-    @Column(name = "roll_id_fk")
-    private Long rollIdFk;
+    @ManyToOne
+    @JoinColumn(name = "roll_id_fk")
+    private Rol rolid;
 
    @Column(name = "Email", length = 50)
     private String email;
@@ -38,8 +42,9 @@ public class Usuario {
     @Column (name = "numerocasa")
     private Integer numerocasa;
 
-    @Column(name = "comuna_id_fk")
-    private Long comunaIdFk;
+    @ManyToOne
+    @JoinColumn(name = "comuna_id_fk")
+    private Comuna comunaid;
 
     @Column(name = "Fecharegistro", length = 50)
     private String fecharegistro;

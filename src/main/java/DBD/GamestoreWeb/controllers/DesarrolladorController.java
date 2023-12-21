@@ -25,7 +25,7 @@ public class DesarrolladorController {
         return ResponseEntity.ok(desarrolladorService.verDesarrolladores());
     }
 
-    @PutMapping("/desarrollador/")
+    @PutMapping("/desarrollador/actualizar")
     public ResponseEntity<Desarrollador> editar(@RequestBody Desarrollador desarrolladorEntity) {
         Desarrollador desarrollador = desarrolladorService.editarDesarrollador(desarrolladorEntity);
         return new ResponseEntity<>(desarrollador, HttpStatus.OK);

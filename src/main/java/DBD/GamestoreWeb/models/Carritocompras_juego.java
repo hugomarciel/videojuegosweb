@@ -6,26 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "valoracion")
+@Table(name = "carritocompras_juego")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Valoracion {
+public class Carritocompras_juego {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    Long valoracionID;
+    @Column(name = "Carritocompras_juegoID", unique = true, nullable = false)
+    private Long carritoComprasJuegoID;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id_fk")
-    private Usuario usuarioId;
+    @JoinColumn(name = "carrito_id_fk")
+    private Carrito_compras carritoCompras;
 
     @ManyToOne
     @JoinColumn(name = "juego_id_fk")
-    private Juego juegoId;
+    private Juego juego;
 
-    private String calificacion;
 
-    private String comentario;
 }
+

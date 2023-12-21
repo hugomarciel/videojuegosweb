@@ -17,9 +17,12 @@ public class Rolpermisos {
     @Column(unique = true, nullable = false)
     Long Rolpermisosid;
 
-    @Column(name = "Rol_id_fk")
-    private Long Rol_id_fk;
+    @ManyToOne
+    @JoinColumn(name = "Rol_id_fk")
+    private Rol Rol_id_fk;
 
-    @Column(name = "permiso_id_fk")
-    private Long permiso_id_fk;
+
+    @ManyToOne
+    @JoinColumn(name = "permiso_id_fk")
+    private Permisos permiso_id_fk;
 }

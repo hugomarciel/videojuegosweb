@@ -1,5 +1,6 @@
 package DBD.GamestoreWeb.models;
 
+import DBD.GamestoreWeb.controllers.DesarrolladorController;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,11 +21,13 @@ public class Juego {
     @Column(name = "Nombre", length = 50)
     private String nombre;
 
-    @Column(name = "Desarrollador_ID_fk")
-    private Long desarrolladorIdFk;
+    @ManyToOne
+    @JoinColumn(name = "Desarrollador_ID_fk")
+    private Desarrollador desarrolladorIdFk;
 
-    @Column(name = "restriccion_id_fk")
-    private Long restriccionIdFk;
+    @ManyToOne
+    @JoinColumn(name = "restriccion_id_fk")
+    private Restriccion restriccionIdFk;
 
     @Column(name = "Precio_original")
     private Double precioOriginal;

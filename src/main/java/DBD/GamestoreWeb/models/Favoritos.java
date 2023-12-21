@@ -17,9 +17,11 @@ public class Favoritos {
     @Column(unique = true, nullable = false)
     Long favoritosid;
 
-    @Column(name = "usuario_id_fk")
-    private Long usuarioIdFk;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id_fk")
+    private Usuario usuarioIdFk;
 
-    @Column(name = "juego_id_fk")
-    private Long juegoIdFk;
+    @ManyToOne
+    @JoinColumn(name = "juego_id_fk")
+    private Juego juegoIdFk;
 }
