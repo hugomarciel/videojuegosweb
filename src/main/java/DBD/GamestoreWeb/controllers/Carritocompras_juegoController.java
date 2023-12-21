@@ -14,24 +14,24 @@ public class Carritocompras_juegoController {
     @Autowired
     Carritocompras_juegoService carritoComprasJuegoService;
 
-    @PostMapping(value = "/carrito-compras-juego/")
+    @PostMapping(value = "/carritocompras_juego/")
     public ResponseEntity<Carritocompras_juego> guardarCarritoComprasJuego(@RequestBody Carritocompras_juego carritoComprasJuegoEntityNuevo) {
         Carritocompras_juego objeto = carritoComprasJuegoService.guardarCarritoComprasJuego(carritoComprasJuegoEntityNuevo);
         return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
-    @GetMapping("/carrito-compras-juego/")
+    @GetMapping("/carritocompras_juego/")
     public ResponseEntity<List<Carritocompras_juego>> verCarritoComprasJuegos() {
         return ResponseEntity.ok(carritoComprasJuegoService.verCarritoComprasJuegos());
     }
 
-    @PutMapping("/carrito-compras-juego/")
+    @PutMapping("/carritocompras_juego/")
     public ResponseEntity<Carritocompras_juego> editar(@RequestBody Carritocompras_juego carritoComprasJuegoEntity) {
         Carritocompras_juego carritoComprasJuego = carritoComprasJuegoService.editarCarritoComprasJuego(carritoComprasJuegoEntity);
         return new ResponseEntity<>(carritoComprasJuego, HttpStatus.OK);
     }
 
-    @DeleteMapping("/carrito-compras-juego/{id}")
+    @DeleteMapping("/carritocompras_juego/{id}")
     @ResponseBody
     public String eliminarCarritoComprasJuego(@PathVariable Long id) {
         Carritocompras_juego carritoComprasJuego = carritoComprasJuegoService.verCarritoComprasJuego(id);

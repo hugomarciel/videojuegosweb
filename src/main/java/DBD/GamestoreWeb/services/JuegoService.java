@@ -31,4 +31,11 @@ public class JuegoService {
     public void eliminarJuego(Juego juego) {
         juegoRepository.delete(juego);
     }
+
+    // Método para obtener un ranking de juegos más comprados
+    public List<Juego> obtenerRankingJuegosMasComprados() {return juegoRepository.findRankingJuegosMasComprados();
+    }
+
+
 }
+

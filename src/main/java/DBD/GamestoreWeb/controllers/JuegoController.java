@@ -42,4 +42,10 @@ public class JuegoController {
             return "No existe el juego con id " + id;
         }
     }
+
+    @GetMapping("/juego/ranking/")
+    public ResponseEntity<List<Juego>> obtenerRankingJuegosMasComprados() {
+        List<Juego> rankingJuegos = juegoService.obtenerRankingJuegosMasComprados();
+        return new ResponseEntity<>(rankingJuegos, HttpStatus.OK);
+    }
 }
