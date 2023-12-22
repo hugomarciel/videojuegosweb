@@ -17,6 +17,6 @@ public interface JuegoRepository extends CrudRepository<Juego, Long> {
     List<Juego> findRankingJuegosMasComprados();
 
 
-    }
+}
 
 

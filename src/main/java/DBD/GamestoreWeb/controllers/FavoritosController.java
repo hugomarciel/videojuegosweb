@@ -1,6 +1,8 @@
 package DBD.GamestoreWeb.controllers;
 
 import DBD.GamestoreWeb.models.Favoritos;
+import DBD.GamestoreWeb.models.Juego;
+import DBD.GamestoreWeb.models.Usuario;
 import DBD.GamestoreWeb.services.FavoritosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,4 +44,11 @@ public class FavoritosController {
             return "No existen favoritos con id " + id;
         }
     }
+
+   @GetMapping("/favoritos/porusuario/")
+    public ResponseEntity<List<Favoritos>> obtenerFavoritosporusuario() {
+        List<Favoritos> favoritoslist = favoritosService.obtenerFavoritosporusuario();
+        return new ResponseEntity <>( favoritoslist, HttpStatus.OK);
+    }
 }
+

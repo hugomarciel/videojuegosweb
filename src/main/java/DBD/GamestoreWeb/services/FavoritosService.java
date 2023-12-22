@@ -31,4 +31,8 @@ public class FavoritosService {
     public void eliminarFavoritos(Favoritos favoritos) {
         favoritosRepository.delete(favoritos);
     }
+
+    public List<Favoritos> obtenerFavoritosporusuario() {return favoritosRepository.findByUsuarioUsuarioIdFk();
+    }
+
 }
