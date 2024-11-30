@@ -38,7 +38,7 @@ public class Usuario {
     @Column (name = "numerocasa")
     private Integer numerocasa;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "comuna_id_fk")
     private Comuna comunaid;
 
