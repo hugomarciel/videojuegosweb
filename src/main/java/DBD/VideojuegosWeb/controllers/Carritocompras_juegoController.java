@@ -1,0 +1,56 @@
+package DBD.VideojuegosWeb.controllers;
+
+import DBD.VideojuegosWeb.entity.Carritocompras_juego;
+import DBD.VideojuegosWeb.services.Carritocompras_juegoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/carrito-juego")
+public class Carritocompras_juegoController {
+    @Autowired
+    Carritocompras_juegoService carritoComprasJuegoService;
+
+    @PostMapping(value = "/add")
+    public ResponseEntity<Carritocompras_juego> guardarCarritoComprasJuego(@RequestBody Carritocompras_juego carritoComprasJuegoEntityNuevo) {
+        Carritocompras_juego objeto = carritoComprasJuegoService.guardarCarritoComprasJuego(carritoComprasJuegoEntityNuevo);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Carritocompras_juego>> verCarritoComprasJuegos() {
+        return ResponseEntity.ok(carritoComprasJuegoService.verCarritoComprasJuegos());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Carritocompras_juego> obtenerCarritoJuego(@PathVariable Long id) {
+        Carritocompras_juego carritoJuego = carritoComprasJuegoService.verCarritoComprasJuego(id);
+        if (carritoJuego != null) {
+            return ResponseEntity.ok(carritoJuego);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Carritocompras_juego> editar(@RequestBody Carritocompras_juego carritoComprasJuegoEntity) {
+        Carritocompras_juego carritoComprasJuego = carritoComprasJuegoService.editarCarritoComprasJuego(carritoComprasJuegoEntity);
+        return new ResponseEntity<>(carritoComprasJuego, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseBody
+    public String eliminarCarritoComprasJuego(@PathVariable Long id) {
+        Carritocompras_juego carritoComprasJuego = carritoComprasJuegoService.verCarritoComprasJuego(id);
+        if (carritoComprasJuego != null) {
+            carritoComprasJuegoService.eliminarCarritoComprasJuego(carritoComprasJuego);
+            return "Carrito de compras de juego eliminado";
+        } else {
+            return "No existe el carrito de compras de juego con id " + id;
+        }
+    }
+}
