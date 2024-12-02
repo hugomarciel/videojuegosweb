@@ -35,5 +35,5 @@ public class Carrito_compras {
     private Juego juegoid;
 
     @Column(name = "Total")
-    private Double total;
+    private Integer total;
 }

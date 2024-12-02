@@ -25,8 +25,9 @@ public class Juego {
     //private Desarrollador desarrolladorIdFk;
 
     @ManyToOne
-    @JoinColumn(name = "juegoxgenero_id_fk")
-    private Juegoxgenero juegoxgenroIdFk;
+    @JoinColumn(name = "generoId")
+    private Genero generoId;
+
 
     @Column(name = "Precio_original")
     private Integer precioOriginal;
@@ -34,7 +35,7 @@ public class Juego {
     @Column(name = "Precio_dcto")
     private Integer precioDescuento;
 
-    @Column(name = "Total")
-    private Integer total;
+    @Column(name = "Cantidad")
+    private Integer cantidad;
 }
 
