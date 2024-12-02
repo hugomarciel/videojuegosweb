@@ -28,7 +28,7 @@ public class Boleta {
     private String metodoPago;
 
     @Column(name = "monto_total")
-    private Double montoTotal;
+    private Integer montoTotal;
 
     @Column(name = "estado_compra")
     private String estadoCompra;

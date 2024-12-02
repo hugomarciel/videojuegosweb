@@ -31,7 +31,7 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/usuario/")
+    @GetMapping("/")
     public ResponseEntity<List<Usuario>> verUsuarios() { return ResponseEntity.ok(usuarioService.verUsuarios());
     }
 

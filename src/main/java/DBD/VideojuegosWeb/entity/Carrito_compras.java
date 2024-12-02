@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Carrito_compras")
 @Data
@@ -27,6 +29,10 @@ public class Carrito_compras {
 
     @Column(name = "Estado", length = 50)
     private String estado;
+
+    @ManyToOne
+    @JoinColumn(name = "JuegoID")
+    private Juego juegoid;
 
     @Column(name = "Total")
     private Double total;

@@ -24,17 +24,17 @@ public class Juego {
     //@JoinColumn(name = "Desarrollador_ID_fk")
     //private Desarrollador desarrolladorIdFk;
 
-    //@ManyToOne
-    //@JoinColumn(name = "restriccion_id_fk")
-    //private Restriccion restriccionIdFk;
+    @ManyToOne
+    @JoinColumn(name = "juegoxgenero_id_fk")
+    private Juegoxgenero juegoxgenroIdFk;
 
     @Column(name = "Precio_original")
-    private Double precioOriginal;
+    private Integer precioOriginal;
 
     @Column(name = "Precio_dcto")
-    private Double precioDescuento;
+    private Integer precioDescuento;
 
     @Column(name = "Total")
-    private Double total;
+    private Integer total;
 }
 
